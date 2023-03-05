@@ -1,21 +1,18 @@
 package com.moodAnalyzer;
 
 
-    public class AnalyzingMood{
-        private String message;
+    public class AnalyzingMood {
+        public class AnalyzingMood extends Exception {
+            public exceptionType type;
 
-        public AnalyzingMood(String message) {
-            this.message = message;
-        }
+            public AnalyzingMood(String message) {
+                super(message);
+                this.type = type;
+            }
 
-        public String analyseMood() {
-            try {
-                if (message.contains("sad"))
-                    return "sad";
-                else
-                    return "Happy";
-            } catch (NullPointerException e) {
-                return "Happy";
+            public enum exceptionType {
+                ENTERED_EMPTY, ENTERED_NULL
             }
         }
     }
+
